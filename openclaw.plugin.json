@@ -1,0 +1,35 @@
+{
+  "id": "team-mode",
+  "name": "Team Mode",
+  "description": "Extends OpenClaw with multi-user team support: member registry, layered memory, and role-based permissions.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "teamId": {
+        "type": "string",
+        "description": "Active team identifier"
+      },
+      "teamName": {
+        "type": "string",
+        "description": "Human-readable team name"
+      },
+      "defaultRole": {
+        "type": "string",
+        "enum": ["admin", "member"],
+        "default": "member"
+      },
+      "sharedMemoryMaxChars": {
+        "type": "number",
+        "default": 1000,
+        "description": "Max chars of TEAM_MEMORY.md injected into every prompt"
+      },
+      "requireJoinBeforeChat": {
+        "type": "boolean",
+        "default": true,
+        "description": "Block unregistered senders until they join with an invite code"
+      }
+    },
+    "required": ["teamId", "teamName"]
+  }
+}

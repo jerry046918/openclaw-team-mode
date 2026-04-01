@@ -1,0 +1,26 @@
+{
+  "name": "@openclaw/team-mode",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "Extends OpenClaw with multi-user team support: member registry, layered memory, and role-based permissions.",
+  "openclaw": {
+    "extensions": ["./index.ts"],
+    "setupEntry": "./setup-entry.ts",
+    "compat": {
+      "pluginApi": ">=2026.3.24-beta.2",
+      "minGatewayVersion": "2026.3.24-beta.2"
+    },
+    "build": {
+      "openclawVersion": "2026.3.24-beta.2",
+      "pluginSdkVersion": "2026.3.24-beta.2"
+    }
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0"
+  },
+  "devDependencies": {
+    "@sinclair/typebox": "^0.34.0",
+    "@types/better-sqlite3": "^7.6.0",
+    "typescript": "^5.7.0"
+  }
+}
